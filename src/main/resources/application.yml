@@ -1,3 +1,12 @@
 spring:
   application:
     name: b-live-api
+  mvc:
+    cors:
+      mappings:
+        "[/**]":
+          allowed-origins: "http://localhost:3000,https://api.ah.r-e.kr"
+          allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+          allowed-headers: "*"
+          allow-credentials: true
+          max-age: 3600
