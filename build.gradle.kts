@@ -40,14 +40,11 @@ tasks.withType<AsciidoctorTask> {
     inputs.dir(snippetsDir)
 }
 
-tasks.register<Copy>("copyDocs") {
-    dependsOn("asciidoctor") // asciidoctor 먼저 실행
-    from("build/docs/asciidoc")
-    into("src/main/resources/static/docs")
-}
-
-tasks.build {
-    dependsOn("copyDocs")
+tasks.bootJar {
+    dependsOn("asciidoctor")
+    from("build/docs/asciidoc") {
+        into("BOOT-INF/classes/static/docs")
+    }
 }
 
 tasks.named<Jar>("jar") {

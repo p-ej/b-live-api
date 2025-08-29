@@ -29,11 +29,6 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-  # docs/index.html 생성
-      - name: make docs/
-        run: | 
-          mkdir -p ./src/main/resources/static/docs
-
   # 권한 부여
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
