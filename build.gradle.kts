@@ -36,25 +36,18 @@ tasks.withType<Test> {
 
 tasks.withType<AsciidoctorTask> {
     dependsOn(tasks.test)
-
-    // 기존에 존재하는 Docs 삭제(문서 최신화를 위해)
-    doFirst {
-        delete(file("src/main/resources/static/docs"))
-    }
-
-    // snippet Directory 설정
     attributes(mapOf("snippets" to snippetsDir))
-
-    // Ascii Doc 파일 생성
-    doLast {
-        copy {
-            from("build/docs/asciidoc")
-            into("src/main/resources/static/docs")
-        }
-    }
+    inputs.dir(snippetsDir)
 }
+
+tasks.register<Copy>("copyDocs") {
+    dependsOn("asciidoctor") // asciidoctor 먼저 실행
+    from("build/docs/asciidoc")
+    into("src/main/resources/static/docs")
+}
+
 tasks.build {
-    dependsOn(tasks.asciidoctor)
+    dependsOn("copyDocs")
 }
 
 tasks.named<Jar>("jar") {
