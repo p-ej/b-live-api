@@ -30,11 +30,9 @@ jobs:
           distribution: 'temurin'
 
   # docs/index.html 생성
-      - name: make docs/index.html
+      - name: make docs/
         run: | 
-          mkdir -p ./src/main/resources/docs
-          cd ./src/main/resources/docs
-          touch ./index.html
+          mkdir -p ./src/main/resources/static/docs
 
   # 권한 부여
       - name: Grant execute permission for gradlew
