@@ -23,12 +23,12 @@ class ThemeApiTest extends ApiDocumentationTest {
                         getDocumentResponse(),
                         responseFields(
                                 fieldWithPath("[].themeName").description("테마 명"),
-                                fieldWithPath("[].imageUrl").description("이미지 주소"),
-                                fieldWithPath("[].imageName").description("이미지 이름"))))
+                                fieldWithPath("[].themeImageUrl").description("테마 이미지 주소"),
+                                fieldWithPath("[].themeImageName").description("테마 이미지 이름"))))
                 .hasStatus2xxSuccessful()
                 .bodyJson()
                 .hasPath("$[0].themeName")
-                .hasPath("$[0].imageUrl")
-                .hasPath("$[0].imageName");
+                .hasPath("$[0].themeImageUrl")
+                .hasPath("$[0].themeImageUrl");
     }
 }
