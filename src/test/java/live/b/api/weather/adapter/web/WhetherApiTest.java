@@ -1,4 +1,4 @@
-package live.b.api.whether.adapter.web;
+package live.b.api.weather.adapter.web;
 
 import live.b.api.support.ApiDocumentationTest;
 import org.junit.jupiter.api.Test;
@@ -10,15 +10,15 @@ import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.docu
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 
-class WhetherApiTest extends ApiDocumentationTest {
+class WeatherApiTest extends ApiDocumentationTest {
 
     @Test
-    void whether() {
-        mockMvcTester.get().uri("/api/v1/whether")
+    void weather() {
+        mockMvcTester.get().uri("/api/v1/weather")
                 .contentType(MediaType.APPLICATION_JSON)
                 .assertThat()
                 .hasStatus2xxSuccessful()
-                .apply(document("whether",
+                .apply(document("weather",
                         getDocumentRequest(),
                         getDocumentResponse(),
                         responseFields(

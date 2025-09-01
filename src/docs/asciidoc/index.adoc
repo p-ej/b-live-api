@@ -9,7 +9,7 @@
 
 == 여행지(Spot)
 
-=== /api/v1/spots/popular
+=== /api/v1/spots/popular 인기 여행지 API
 
 ==== Request Example
 include::{snippets}/spots/http-request.adoc[]
@@ -22,7 +22,7 @@ include::{snippets}/spots/response-fields.adoc[]
 
 == 코스(Course)
 
-=== /api/v1/courses/popular
+=== /api/v1/courses/popular 인기 코스 API
 
 ==== Request Example
 include::{snippets}/courses/http-request.adoc[]
@@ -37,7 +37,7 @@ include::{snippets}/courses/response-fields.adoc[]
 
 == 이벤트(Event)
 
-=== /api/v1/events
+=== /api/v1/events 이벤트 목록 API
 
 ==== Request Example
 include::{snippets}/events/http-request.adoc[]
@@ -50,7 +50,7 @@ include::{snippets}/events/response-fields.adoc[]
 
 == 축제 및 행사(Festival)
 
-=== /api/v1/festivals
+=== /api/v1/festivals 축제 목록 API
 
 ==== Request Example
 include::{snippets}/festivals/http-request.adoc[]
@@ -61,22 +61,22 @@ include::{snippets}/festivals/response-body.adoc[]
 ==== Response Field
 include::{snippets}/festivals/response-fields.adoc[]
 
-== 날씨(Whether)
+== 날씨(Weather)
 
-=== /api/v1/whether
+=== /api/v1/weather 날씨 정보 API
 
 ==== Request Example
-include::{snippets}/whether/http-request.adoc[]
+include::{snippets}/weather/http-request.adoc[]
 
 ==== Response Body
-include::{snippets}/whether/response-body.adoc[]
+include::{snippets}/weather/response-body.adoc[]
 
 ==== Response Field
-include::{snippets}/whether/response-fields.adoc[]
+include::{snippets}/weather/response-fields.adoc[]
 
 == 테마(Theme)
 
-=== /api/v1/themes
+=== /api/v1/themes 테마 목록 API
 
 ==== Request Example
 include::{snippets}/themes/http-request.adoc[]
