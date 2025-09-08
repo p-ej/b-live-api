@@ -12,6 +12,9 @@ permissions:
     group: ubuntu
 
 hooks:
+  AfterInstall:
+    - location: scripts/create_env.sh
+      timeout: 60
   ApplicationStart:
     - location: scripts/deploy.sh
       timeout: 60

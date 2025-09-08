@@ -10,3 +10,19 @@ spring:
           allowed-headers: "*"
           allow-credentials: true
           max-age: 3600
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
