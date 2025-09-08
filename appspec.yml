@@ -13,7 +13,7 @@ permissions:
 
 hooks:
   AfterInstall:
-    - location: scripts/create_env.sh
+    - location: scripts/fetch_params.sh
       timeout: 60
   ApplicationStart:
     - location: scripts/deploy.sh
