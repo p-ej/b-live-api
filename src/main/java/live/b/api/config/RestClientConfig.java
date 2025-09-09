@@ -1,4 +1,4 @@
-package live.b.api;
+package live.b.api.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
