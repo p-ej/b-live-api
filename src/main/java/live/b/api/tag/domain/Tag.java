@@ -33,8 +33,8 @@ public class Tag {
         this.code = code;
     }
 
-    public void addTranslation(Locale locale, String name) {
-        TagTranslation translation = new TagTranslation(this, locale, name);
+    public void addTranslation(Locale locale, String label) {
+        TagTranslation translation = new TagTranslation(this, locale, label);
         this.translations.add(translation);
     }
 }

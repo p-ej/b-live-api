@@ -26,14 +26,14 @@ public class TagTranslation {
     @Column(name = "locale")
     private String locale;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "label")
+    private String label;
 
     protected TagTranslation() {}
 
-    public TagTranslation(Tag tag, Locale locale, String name) {
+    public TagTranslation(Tag tag, Locale locale, String label) {
         this.tag = tag;
         this.locale = locale.getLanguage();
-        this.name = name;
+        this.label = label;
     }
 }

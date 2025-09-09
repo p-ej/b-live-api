@@ -20,6 +20,7 @@ public class TagApi {
 
     @GetMapping
     public ResponseEntity<List<TagDto>> tags(Locale locale) {
-        return ResponseEntity.ok(tagFinder.findAll(locale));
+        List<TagDto> tags = tagFinder.findAll(locale);
+        return ResponseEntity.ok(tags);
     }
 }
