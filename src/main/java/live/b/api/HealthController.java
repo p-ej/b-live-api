@@ -67,7 +67,7 @@ public class HealthController {
             throw new IllegalStateException("body is null");
         }
 
-        return org.springframework.http.ResponseEntity.ok(objectMapper.writeValueAsString(
+        return ResponseEntity.ok(objectMapper.writeValueAsString(
                 chatClient.prompt()
                         .system("""
                                 당신은 여행지 가이드입니다.

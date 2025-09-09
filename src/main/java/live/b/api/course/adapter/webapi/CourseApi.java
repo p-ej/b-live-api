@@ -1,5 +1,6 @@
 package live.b.api.course.adapter.webapi;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static live.b.api.course.adapter.webapi.PopularCourseResponse.*;
+import static live.b.api.course.adapter.webapi.PopularCourseResponse.SpotResponse;
 
 @RestController
 @RequestMapping("/api/v1/courses")
+@RequiredArgsConstructor
 public class CourseApi {
-
     @GetMapping("/popular")
     public ResponseEntity<List<PopularCourseResponse>> popular() {
         return ResponseEntity.ok(List.of(
