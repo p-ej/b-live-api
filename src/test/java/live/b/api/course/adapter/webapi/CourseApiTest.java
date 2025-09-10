@@ -2,7 +2,10 @@ package live.b.api.course.adapter.webapi;
 
 import live.b.api.support.ApiDocumentationTest;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.assertj.MockMvcTester;
 
 import static live.b.api.support.ApiDocumentUtils.getDocumentRequest;
 import static live.b.api.support.ApiDocumentUtils.getDocumentResponse;
@@ -10,7 +13,11 @@ import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.docu
 import static org.springframework.restdocs.payload.JsonFieldType.*;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 
+@WebMvcTest(CourseApi.class)
 class CourseApiTest extends ApiDocumentationTest {
+
+    @Autowired
+    MockMvcTester mockMvcTester;
 
     @Test
     void popular() {
