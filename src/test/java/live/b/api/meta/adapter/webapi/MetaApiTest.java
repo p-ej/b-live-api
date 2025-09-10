@@ -6,8 +6,11 @@ import live.b.api.support.ApiDocumentationTest;
 import live.b.api.tag.application.dto.TagDto;
 import live.b.api.tag.application.provided.TagFinder;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.test.web.servlet.assertj.MockMvcTester;
 
 import java.util.List;
 
@@ -18,7 +21,11 @@ import static org.mockito.Mockito.when;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 
+@WebMvcTest(MetaApi.class)
 class MetaApiTest extends ApiDocumentationTest {
+
+    @Autowired
+    public MockMvcTester mockMvcTester;
 
     @MockitoBean
     RegionFinder regionFinder;
