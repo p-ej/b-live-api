@@ -11,6 +11,7 @@ env:
   AWS_S3_BUCKET: b.live-deploy-bucket
   AWS_CODE_DEPLOY_APPLICATION: b.live
   AWS_CODE_DEPLOY_GROUP: BLive-Deploy-Group
+  ENVIRONMENT: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
 
 jobs:
   deploy:
@@ -52,8 +53,15 @@ jobs:
 
   # S3 버킷에 빌드파일(zip 파일)을 업로드
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://$AWS_S3_BUCKET/$GITHUB_SHA.zip
+        run: |
+          echo "Deploying to $ENVIRONMENT"
+          aws s3 cp --region $AWS_REGION ./$GITHUB_SHA.zip s3://$AWS_S3_BUCKET/$GITHUB_SHA.zip
 
   # EC2 인스턴스에 S3에 저장되어 있던 zip 파일을 받아와 배포 시작
       - name: EC2에 배포
-        run: aws deploy create-deployment --application-name ${{ env.AWS_CODE_DEPLOY_APPLICATION }} --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name ${{ env.AWS_CODE_DEPLOY_GROUP }} --s3-location bucket=$AWS_S3_BUCKET,key=$GITHUB_SHA.zip,bundleType=zip
+        run: |
+          aws deploy create-deployment \
+          --application-name ${{ env.AWS_CODE_DEPLOY_APPLICATION }} \
+          --deployment-config-name CodeDeployDefault.AllAtOnce \
+          --deployment-group-name ${{ env.AWS_CODE_DEPLOY_GROUP }} \
+          --s3-location bucket=$AWS_S3_BUCKET,key=$GITHUB_SHA.zip,bundleType=zip
