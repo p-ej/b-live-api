@@ -1,0 +1,88 @@
+:doctype: book
+:icons: font
+:toc: left
+:toclevels: 3
+:source-highlighter: highlightjs
+:sectlinks:
+
+= B.LIVE API Specification
+
+== 여행지(Spot)
+
+=== /api/v1/spots/popular 인기 여행지 API
+
+==== Request Example
+include::{snippets}/spots/http-request.adoc[]
+
+==== Response Body
+include::{snippets}/spots/response-body.adoc[]
+
+==== Response Field
+include::{snippets}/spots/response-fields.adoc[]
+
+== 코스(Course)
+
+=== /api/v1/courses/popular 인기 코스 API
+
+==== Request Example
+include::{snippets}/courses/http-request.adoc[]
+
+==== Response Body
+include::{snippets}/courses/response-body.adoc[]
+
+==== Response Field
+include::{snippets}/courses/response-fields.adoc[]
+
+== 회원(Member)
+
+== 이벤트(Event)
+
+=== /api/v1/events 이벤트 목록 API
+
+==== Request Example
+include::{snippets}/events/http-request.adoc[]
+
+==== Response Body
+include::{snippets}/events/response-body.adoc[]
+
+==== Response Field
+include::{snippets}/events/response-fields.adoc[]
+
+== 축제 및 행사(Festival)
+
+=== /api/v1/festivals 축제 목록 API
+
+==== Request Example
+include::{snippets}/festivals/http-request.adoc[]
+
+==== Response Body
+include::{snippets}/festivals/response-body.adoc[]
+
+==== Response Field
+include::{snippets}/festivals/response-fields.adoc[]
+
+== 날씨(Weather)
+
+=== /api/v1/weather 날씨 정보 API
+
+==== Request Example
+include::{snippets}/weather/http-request.adoc[]
+
+==== Response Body
+include::{snippets}/weather/response-body.adoc[]
+
+==== Response Field
+include::{snippets}/weather/response-fields.adoc[]
+
+== 테마(Theme)
+
+=== /api/v1/themes 테마 목록 API
+
+==== Request Example
+include::{snippets}/themes/http-request.adoc[]
+
+==== Response Body
+include::{snippets}/themes/response-body.adoc[]
+
+==== Response Field
+include::{snippets}/themes/response-fields.adoc[]
