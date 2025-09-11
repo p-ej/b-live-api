@@ -1,6 +1,8 @@
 spring:
   application:
     name: b-live-api
+  config:
+      import: optional:aws-prameterstore:/blive/prod
   mvc:
     cors:
       mappings:
@@ -11,10 +13,7 @@ spring:
           allow-credentials: true
           max-age: 3600
   jpa:
-    hibernate:
-      ddl-auto: validate
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
   ai:
     openai:
       api-key: ${OPENAI_API_KEY}

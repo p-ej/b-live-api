@@ -7,6 +7,7 @@ plugins {
     id("org.asciidoctor.jvm.convert") version "4.0.4"
 }
 val springAiVersion by extra("1.0.1")
+val springCloudAwsVersion by extra("3.0.0")
 
 group = "live.b"
 version = "0.0.1-SNAPSHOT"
@@ -24,6 +25,8 @@ repositories {
 }
 
 dependencies {
+    implementation(platform("io.awspring.cloud:spring-cloud-aws-dependencies:${springCloudAwsVersion}"))
+    implementation("io.awspring.cloud:spring-cloud-aws-starter-parameter-store")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
