@@ -2,7 +2,7 @@ spring:
   application:
     name: b-live-api
   config:
-    import: "aws-parameterstore:/blive/prod/"
+    import: "optional:aws-parameterstore:/blive/prod/"
   mvc:
     cors:
       mappings:
