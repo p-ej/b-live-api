@@ -6,8 +6,11 @@ import live.b.api.support.ApiDocumentationTest;
 import live.b.api.tag.application.dto.TagDto;
 import live.b.api.tag.application.provided.TagFinder;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.test.web.servlet.assertj.MockMvcTester;
 
 import java.util.List;
 
@@ -18,7 +21,11 @@ import static org.mockito.Mockito.when;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.payload.PayloadDocumentation.*;
 
+@WebMvcTest(MetaApi.class)
 class MetaApiTest extends ApiDocumentationTest {
+
+    @Autowired
+    public MockMvcTester mockMvcTester;
 
     @MockitoBean
     RegionFinder regionFinder;
@@ -44,7 +51,7 @@ class MetaApiTest extends ApiDocumentationTest {
                                         fieldWithPath("regions.[].regionName").description("지역 이름"),
                                         fieldWithPath("regions.[].regionImageUrl").description("지역 이미지 URL"),
                                         subsectionWithPath("tags").description("태그"),
-                                        subsectionWithPath("tags.tagType").description("태그타입"),
+                                        subsectionWithPath("tags.tagType.[]").description("태그타입"),
                                         fieldWithPath("tags.tagType.[].tagId").description("태그 ID"),
                                         fieldWithPath("tags.tagType.[].tagType").description("태그 타입"),
                                         fieldWithPath("tags.tagType.[].tagCode").description("태그 코드"),

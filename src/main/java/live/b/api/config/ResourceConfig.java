@@ -12,4 +12,9 @@ public class ResourceConfig {
     public Resource spotGuide() {
         return new ClassPathResource("/prompts/spot-guide.st");
     }
+
+    @Bean
+    public Resource courseGenerateGuide() {
+        return new ClassPathResource("/prompts/course-generate-guide.st");
+    }
 }

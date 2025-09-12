@@ -1,6 +1,6 @@
-package live.b.api.spot.adapter.webapi;
+package live.b.api.spot.application.dto;
 
-public record PopularSpotResponse(
+public record SpotDto(
         Long spotId,
         String spotName,
         String spotImageUrl
