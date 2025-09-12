@@ -38,8 +38,4 @@ public class Spot {
     @OneToOne
     @JoinColumn(name = "region_id")
     private Region region;
-
-    @OneToMany(mappedBy = "spot")
-    private List<SpotTag> tags = new ArrayList<>();
-
 }

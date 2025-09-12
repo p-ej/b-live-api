@@ -12,9 +12,6 @@ permissions:
     group: ubuntu
 
 hooks:
-  AfterInstall:
-    - location: scripts/fetch_params.sh
-      timeout: 60
   ApplicationStart:
     - location: scripts/deploy.sh
       timeout: 60

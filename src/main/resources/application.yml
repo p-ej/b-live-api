@@ -2,7 +2,7 @@ spring:
   application:
     name: b-live-api
   config:
-      import: optional:aws-prameterstore:/blive/prod
+    import: "aws-parameterstore:/blive/prod/"
   mvc:
     cors:
       mappings:
@@ -22,4 +22,16 @@ spring:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
+  cloud:
+    aws:
+      region:
+        static: ap-northeast-2
+
+logging:
+  file:
+    name: /home/ubuntu/log/b-live-api.log
+  level:
+    io:
+      awspring:
+        cloud: debug
 
