@@ -1,5 +1,6 @@
 package live.b.api.spot.application;
 
+import live.b.api.spot.application.dto.SpotDto;
 import live.b.api.spot.application.provided.SpotFinder;
 import live.b.api.spot.application.required.SpotRepository;
 import lombok.RequiredArgsConstructor;

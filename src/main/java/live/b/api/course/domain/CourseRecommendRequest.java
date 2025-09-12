@@ -1,6 +1,9 @@
 package live.b.api.course.domain;
 
-public record CourseRecommendRequest(
+import java.util.List;
 
+public record CourseRecommendRequest(
+    Long regionId,
+    List<Long> tagIds
 ) {
 }

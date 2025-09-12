@@ -1,6 +1,6 @@
 package live.b.api.spot.adapter.webapi;
 
-import live.b.api.spot.application.SpotDto;
+import live.b.api.spot.application.dto.SpotDto;
 import live.b.api.spot.application.provided.SpotFinder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
