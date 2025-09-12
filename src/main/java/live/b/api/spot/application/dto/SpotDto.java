@@ -1,4 +1,4 @@
-package live.b.api.spot.application;
+package live.b.api.spot.application.dto;
 
 public record SpotDto(
         Long spotId,
