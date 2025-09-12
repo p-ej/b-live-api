@@ -51,11 +51,11 @@ class MetaApiTest extends ApiDocumentationTest {
                                         fieldWithPath("regions.[].regionName").description("지역 이름"),
                                         fieldWithPath("regions.[].regionImageUrl").description("지역 이미지 URL"),
                                         subsectionWithPath("tags").description("태그"),
-                                        subsectionWithPath("tags.[]").description("태그타입"),
-                                        fieldWithPath("tags.[].tagId").description("태그 ID"),
-                                        fieldWithPath("tags.[].tagType").description("태그 타입"),
-                                        fieldWithPath("tags.[].tagCode").description("태그 코드"),
-                                        fieldWithPath("tags.[].tagLabel").description("태그 라벨")
+                                        subsectionWithPath("tags.tagType.[]").description("태그타입"),
+                                        fieldWithPath("tags.tagType.[].tagId").description("태그 ID"),
+                                        fieldWithPath("tags.tagType.[].tagType").description("태그 타입"),
+                                        fieldWithPath("tags.tagType.[].tagCode").description("태그 코드"),
+                                        fieldWithPath("tags.tagType.[].tagLabel").description("태그 라벨")
                                 )
                         )
                 )
