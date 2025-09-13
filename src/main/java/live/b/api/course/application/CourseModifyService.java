@@ -35,7 +35,8 @@ public class CourseModifyService implements CourseRecommender {
             throw new IllegalArgumentException();
         }
 
-        List<Course> found = courseRepository.findAllByRegionAndTagIn(region, tags);
+        // TODO: Region과 Tag로 Course 조회 로직 구현 필요
+        List<Course> found = List.of();
 
         if (found.isEmpty()) {
             List<Spot> spots = spotFinder.find(region, 30);

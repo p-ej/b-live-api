@@ -13,6 +13,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.assertj.MockMvcTester;
 
 import java.util.List;
+import java.util.Locale;
 
 import static live.b.api.support.ApiDocumentUtils.getDocumentRequest;
 import static live.b.api.support.ApiDocumentUtils.getDocumentResponse;
@@ -35,8 +36,8 @@ class MetaApiTest extends ApiDocumentationTest {
 
     @Test
     void getMeta() {
-        when(regionFinder.findAll(any())).thenReturn(List.of(new RegionDto(1L, "regionName", "imageUrl")));
-        when(tagFinder.findAll(any())).thenReturn(List.of(new TagDto(1L, "tagType", "tagCode", "tagLabel")));
+        when(regionFinder.findAll(any(Locale.class))).thenReturn(List.of(new RegionDto(1L, "regionName", "imageUrl")));
+        when(tagFinder.findAll(any(Locale.class))).thenReturn(List.of(new TagDto(1L, "tagType", "tagCode", "tagLabel")));
 
         mockMvcTester.get().uri("/api/v1/meta")
                 .contentType(MediaType.APPLICATION_JSON)
