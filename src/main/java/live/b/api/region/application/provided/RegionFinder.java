@@ -3,7 +3,6 @@ package live.b.api.region.application.provided;
 import live.b.api.region.application.dto.RegionDto;
 import live.b.api.region.domain.Region;
 
-import java.lang.ScopedValue;
 import java.util.List;
 import java.util.Locale;
 

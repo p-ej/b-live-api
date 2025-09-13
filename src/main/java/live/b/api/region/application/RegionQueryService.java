@@ -3,6 +3,7 @@ package live.b.api.region.application;
 import live.b.api.region.application.dto.RegionDto;
 import live.b.api.region.application.provided.RegionFinder;
 import live.b.api.region.application.required.RegionRepository;
+import live.b.api.region.domain.Region;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +21,10 @@ public class RegionQueryService implements RegionFinder {
     public List<RegionDto> findAll(Locale locale) {
         String language = locale.getLanguage();
         return regionRepository.findAllByLocale(language);
+    }
+
+    @Override
+    public Region find(Long regionId) {
+        return regionRepository.findById(regionId).orElse(null);
     }
 }
